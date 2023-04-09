@@ -1,0 +1,5 @@
+There are some nice tutorials for learning about the main challenges here:
+
+
+1- Working with different threads to avoid low performance. 
+link:https://stackoverflow.com/questions/45363505/python-flask-returning-a-html-page-while-simultaneously-performing-a-function
