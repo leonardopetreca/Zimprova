@@ -59,7 +59,8 @@ def sendGmail(lista_dados):
     
     
     load_dotenv()
-    PASSWORD = 'ryqjgfjinxdevmho'# os.getenv("PASSWORD")
+    PASSWORD = ryqjgfjinxdevmho
+     # os.getenv("PASSWORD")
     #PASSWORD = os.environ.get('PASSWORD')
     
     sender="Elanco - Calculadora Zimprova"
