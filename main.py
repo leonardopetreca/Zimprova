@@ -59,7 +59,7 @@ def sendGmail(lista_dados):
     
     
     load_dotenv()
-    PASSWORD = ryqjgfjinxdevmho
+    PASSWORD = "ryqjgfjinxdevmho"
      # os.getenv("PASSWORD")
     #PASSWORD = os.environ.get('PASSWORD')
     
