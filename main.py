@@ -59,7 +59,7 @@ def sendGmail(lista_dados):
     
     
     load_dotenv()
-    PASSWORD = "ryqjgfjinxdevmho"
+    PASSWORD = "ocncpksdhqwqfdzf"
      # os.getenv("PASSWORD")
     #PASSWORD = os.environ.get('PASSWORD')
     
@@ -100,7 +100,7 @@ def sendGmail(lista_dados):
     
     
     print(content)
-    yag = yagmail.SMTP(user='andre@marketinglabs.com.br', password=PASSWORD)
+    yag = yagmail.SMTP(user='leonardocarmo9803@gmail.com', password=PASSWORD)
     yag.send(to=receiver, subject=Subject, contents=content)
 
 
