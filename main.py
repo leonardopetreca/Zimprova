@@ -100,8 +100,8 @@ def sendGmail(lista_dados):
     
     
     print(content)
-    yag = yagmail.SMTP()
-    yag.send(receiver, Subject, content)
+    yag = yagmail.SMTP(user='andre@marketinglabs.com.br', password=PASSWORD)
+    yag.send(to=receiver, subject=Subject, contents=content)
 
 
 
