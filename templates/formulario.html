@@ -141,12 +141,15 @@
               />
             </div>
             <div class="fieldForm">
-              <label for="peso_medio">Qual é o peso inicial médio?</label>
+              <label for="peso_medio"
+                >Qual é o peso inicial médio? &#40;Kg&#41;</label
+              >
               <input
                 type="number"
                 id="peso_medio"
                 name="peso_medio"
                 value="{{peso_medio_answer}}"
+                placeholder="Kg"
                 step="0.001"
                 required
               />
@@ -168,13 +171,15 @@
             </div>
 
             <div class="fieldForm">
-              <label for="gmd">Qual é o ganho de peso diário?</label>
+              <label for="gmd"
+                >Qual é o ganho de peso diário? &#40;gramas/dia&#41;</label
+              >
               <input
                 type="number"
                 id="gmd"
                 name="gmd"
                 value="{{gmd_answer}}"
-                placeholder="gramas"
+                placeholder="gramas/dia"
                 step="1"
                 required
               />
@@ -212,13 +217,15 @@
 
           <div class="fieldForm">
             <label for="preco_arroba"
-              >Qual é o preço do arroba do boi magro por aí?</label
+              >Qual é o preço do arroba do boi magro por aí?
+              &#40;R$/arroba&#41;</label
             >
             <input
               type="number"
               id="preco_arroba"
               name="preco_arroba"
               value="{{preco_arroba_answer}}"
+              placeholder="R$/arroba"
               step="0.001"
               required
             />
@@ -249,14 +256,14 @@
         <div class="form-fields alone">
           <div class="fieldForm">
             <label for="preco_suplemento"
-              >Qual é o preço do suplemento atual?</label
+              >Qual é o preço do suplemento atual? &#40;R$/Kg&#41;</label
             >
             <input
               type="number"
               id="preco_suplemento"
               name="preco_suplemento"
               value="{{preco_suplemento_answer}}"
-              placeholder="por Kg!"
+              placeholder="R$/Kg"
               step="0.001"
               required
             />
@@ -264,14 +271,15 @@
 
           <div class="fieldForm">
             <label for="suplemento_atual"
-              >Qual é o consumo indicado do suplemento atual?</label
+              >Qual é o consumo indicado do suplemento atual?
+              &#40;gramas/cabeça/dia&#41;</label
             >
             <input
               type="number"
               id="suplemento_atual"
               name="suplemento_atual"
               value="{{suplemento_atual_answer}}"
-              placeholder="por gramas/cabeça/dia"
+              placeholder="gramas/cabeça/dia"
               step="0.001"
               required
             />
