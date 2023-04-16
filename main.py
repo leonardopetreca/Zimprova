@@ -6,7 +6,7 @@ from threading import Thread
 from time import sleep
 import os 
 from dotenv import load_dotenv
-import smtplib
+
 
 
 app =Flask(__name__)
@@ -52,15 +52,7 @@ def async_slow_function(funct ,some_object):
 
 #Funções para distribuir os Leads tanto para gmail quanto google Sheets
 def sendGmail(lista_dados):
-    server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
-    server.login('andre@marketinglabs.com.br', 'ryqjgfjinxdevmho')
-    server.sendmail(
-              "andre@marketinglabs.com.br",
-              "andre@marketinglabs.com.br",
-              "Conteúdo da mensagem")
-    server.quit()       
-            
-            
+ 
     lista_contato =lista_dados[0]
     dados = lista_dados[1]
     lista_atual = lista_dados[2]
