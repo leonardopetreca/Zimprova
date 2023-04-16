@@ -6,7 +6,7 @@ from threading import Thread
 from time import sleep
 import os 
 from dotenv import load_dotenv
-
+import smtplib
 
 
 app =Flask(__name__)
@@ -96,6 +96,14 @@ def sendGmail(lista_dados):
     '''
     
     
+
+     server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+     server.login("andre@marketinglabs.com.br", PASSWORD)
+     server.sendmail(
+              "andre@marketinglabs.com.br",
+              "andre@marketinglabs.com.br",
+              "Conteúdo da mensagem")
+    server.quit()
     
     
     print(content)
