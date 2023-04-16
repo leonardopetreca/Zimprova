@@ -97,9 +97,9 @@ def sendGmail(lista_dados):
     
     
 
-     server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
-     server.login("andre@marketinglabs.com.br", PASSWORD)
-     server.sendmail(
+    server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+    server.login("andre@marketinglabs.com.br", PASSWORD)
+    server.sendmail(
               "andre@marketinglabs.com.br",
               "andre@marketinglabs.com.br",
               "Conteúdo da mensagem")
