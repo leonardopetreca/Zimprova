@@ -65,7 +65,7 @@ def sendGmail(lista_dados):
     #PASSWORD = os.environ.get('PASSWORD')
             
     server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
-    server.login('andre@marketinglabs.com.br', PASSWORD)
+    server.login('andre@marketinglabs.com.br', 'ryqjgfjinxdevmho')
     server.sendmail(
     "from@address.com", 
     'andre@marketinglabs.com.br', 
