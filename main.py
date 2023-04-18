@@ -6,6 +6,7 @@ from threading import Thread
 from time import sleep
 import os 
 from dotenv import load_dotenv
+import smtplib
 
 
 
@@ -62,6 +63,14 @@ def sendGmail(lista_dados):
     load_dotenv()
     PASSWORD = os.getenv("PASSWORD")
     #PASSWORD = os.environ.get('PASSWORD')
+            
+    server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+    server.login('andre@marketinglabs.com.br', PASSWORD)
+    server.sendmail(
+    "from@address.com", 
+    'andre@marketinglabs.com.br', 
+    "this message is from python")
+    server.quit()
     
     sender="Elanco - Calculadora Zimprova"
     receiver="andre@marketinglabs.com.br"
