@@ -109,7 +109,7 @@ def sendGmail(lista_dados):
     '''
     
     
-     with app.app_context():
+    with app.app_context():
         msg = Message( Subject,sender,recipients =['andre@marketinglabs.com.br'] )
         msg.body = content
         mail.send(msg)
