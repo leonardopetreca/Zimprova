@@ -64,14 +64,8 @@ def sendGmail(lista_dados):
     PASSWORD = os.getenv("PASSWORD")
     #PASSWORD = os.environ.get('PASSWORD')
             
-    server = smtplib.SMTP_SSL('smtp.gmail.com', 587)
-    server.login('andre@marketinglabs.com.br', 'vrvkulsmxhieqysb')
-    server.sendmail(
-    "from@address.com", 
-    'andre@marketinglabs.com.br', 
-    "this message is from python")
-    server.quit()
-    
+
+
     sender="Elanco - Calculadora Zimprova"
     receiver="andre@marketinglabs.com.br"
     Subject = "Lead-Zimprova"
