@@ -79,7 +79,6 @@ def sendGmail(lista_dados):
     
    
     sender="Elanco - Calculadora Zimprova"
-    receiver="leonardocarmo9803@gmail.com"
     Subject = "Lead-Zimprova"
    
     #Construção do corpo de email 
@@ -110,8 +109,9 @@ def sendGmail(lista_dados):
     
     
     with app.app_context():
-       msg = Message(Subject, sender=sender,recipients =['andre@marketinglabs.com.br'] )
-       msg.body = 'message'
+       msg = Message(Subject, sender=("Me", sender), recipients =['andre@marketinglabs.com.br'] )
+       assert msg.sender == "Me" + sender
+       msg.html = content
        mail.send(msg)
     
    
