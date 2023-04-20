@@ -11,12 +11,16 @@ from flask_mail import Mail, Message
 
 
 app =Flask(__name__)
+
+load_dotenv()
+PASSWORD = os.getenv("PASSWORD")
+
 # configuration of mail
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USERNAME'] = 'andre@marketinglabs.com.br'
 # use the app password created 
-app.config['MAIL_PASSWORD'] = '7Dmxtau_)!@'
+app.config['MAIL_PASSWORD'] = PASSWORD
 
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False
