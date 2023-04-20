@@ -72,30 +72,16 @@ def async_slow_function(funct ,some_object):
 
 #Funções para distribuir os Leads tanto para gmail quanto google Sheets
 def sendGmail(lista_dados):
-    with app.app_context():
-        msg = Message('subject',sender='andre@marketinglabs.com.br',recipients =['andre@marketinglabs.com.br'] )
-        msg.body = 'message'
-        mail.send(msg)
- 
     lista_contato =lista_dados[0]
     dados = lista_dados[1]
     lista_atual = lista_dados[2]
     lista_zimprova =lista_dados[3]
     
-    
-    #load_dotenv()
-    #PASSWORD = os.getenv("PASSWORD")
-    #PASSWORD = os.environ.get('PASSWORD')
-            
-
-
+   
     sender="Elanco - Calculadora Zimprova"
     receiver="leonardocarmo9803@gmail.com"
     Subject = "Lead-Zimprova"
-    
-    
-     
-    
+   
     #Construção do corpo de email 
     itens=""
     for x in lista_contato:
@@ -123,12 +109,12 @@ def sendGmail(lista_dados):
     '''
     
     
+     with app.app_context():
+        msg = Message( Subject,sender,recipients =['andre@marketinglabs.com.br'] )
+        msg.body = content
+        mail.send(msg)
     
-    
-    print(content)
-    #yag = yagmail.SMTP(user='andre@marketinglabs.com.br', password='ryqjgfjinxdevmho')
-    #yag.send('leonardocarmo9803@gmail.com', 'oi',content)
-
+   
 
 
 
