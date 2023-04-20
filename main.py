@@ -109,8 +109,8 @@ def sendGmail(lista_dados):
     
     
     with app.app_context():
-       msg = Message(Subject, sender=("Me", sender), recipients =['andre@marketinglabs.com.br'] )
-       assert msg.sender == "Me" + sender
+       msg = Message(Subject, sender=sender, recipients =['andre@marketinglabs.com.br'] )
+       
        msg.html = content
        mail.send(msg)
     
