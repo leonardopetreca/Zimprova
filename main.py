@@ -7,7 +7,20 @@ from time import sleep
 import os 
 from dotenv import load_dotenv
 import smtplib
+from flask_mail import Mail, Message
 
+# configuration of mail
+app.config['MAIL_SERVER']='smtp.gmail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USERNAME'] = 'andre@marketinglabs.com.br'
+# use the app password created 
+app.config['MAIL_PASSWORD'] = '7Dmxtau_)!@'
+
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USE_SSL'] = False
+
+# instantiating the mail service only after the 'app.config' to avoid error   
+mail = Mail(app)
 
 
 app =Flask(__name__)
@@ -53,6 +66,10 @@ def async_slow_function(funct ,some_object):
 
 #Funções para distribuir os Leads tanto para gmail quanto google Sheets
 def sendGmail(lista_dados):
+    with app.app_context():
+        msg = Message('subject',sender='andre@marketinglabs.com.br',recipients =['andre@marketinglabs.com.br'] )
+        msg.body = 'message'
+        mail.send(msg)
  
     lista_contato =lista_dados[0]
     dados = lista_dados[1]
@@ -103,8 +120,8 @@ def sendGmail(lista_dados):
     
     
     print(content)
-    yag = yagmail.SMTP(user='andre@marketinglabs.com.br', password='ryqjgfjinxdevmho')
-    yag.send('leonardocarmo9803@gmail.com', 'oi',content)
+    #yag = yagmail.SMTP(user='andre@marketinglabs.com.br', password='ryqjgfjinxdevmho')
+    #yag.send('leonardocarmo9803@gmail.com', 'oi',content)
 
 
 
