@@ -9,6 +9,8 @@ from dotenv import load_dotenv
 import smtplib
 from flask_mail import Mail, Message
 
+
+app =Flask(__name__)
 # configuration of mail
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
@@ -23,7 +25,7 @@ app.config['MAIL_USE_SSL'] = False
 mail = Mail(app)
 
 
-app =Flask(__name__)
+
 
 #unidades dos dados
 dadosUnidades = {
