@@ -189,15 +189,20 @@ body {
 .home__sacaria h2 {
   font-size: 5rem;
   font-style: italic;
-  margin-bottom: var(--mb-1-5);
+  margin-bottom: var(--mb-0-50);
 }
 
-.home__sacaria p {
+.home__sacaria h3 {
   font-size: 25px;
   font-weight: var(--font-extra-bold);
   text-transform: uppercase;
 }
 
+.home__sacaria p {
+  font-size: 1rem;
+  font-weight: var(--font-medium);
+  margin-top: 10px;
+}
 .home__img {
   width: 380px;
   position: relative;

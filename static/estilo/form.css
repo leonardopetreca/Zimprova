@@ -100,7 +100,7 @@ button:hover {
   margin: 12px 0px;
 }
 
-.fieldForm label {
+.form-fields label {
   text-align: left;
   font-weight: var(--Peso-texto);
   font-size: var(--Tamanho-texto);
