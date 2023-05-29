@@ -1,35 +1,32 @@
 from flask import Flask, render_template, request, jsonify,after_this_request
 import gspread as gp
 from datetime import datetime
-import yagmail 
+
 from threading import Thread
 from time import sleep
 import os 
 from dotenv import load_dotenv
 import smtplib
+
 from flask_mail import Mail, Message
 
 
 app =Flask(__name__)
 
-#load_dotenv()
+
+load_dotenv()
 PASSWORD = os.getenv("PASSWORD")
 
-# configuration of mail
+# configuração do email
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
-app.config['MAIL_USERNAME'] = 'andre@marketinglabs.com.br'
-# use the app password created 
+app.config['MAIL_USERNAME'] = 'sender@marketinglabs.com.br'
 app.config['MAIL_PASSWORD'] = PASSWORD
-
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False
 
 # instantiating the mail service only after the 'app.config' to avoid error   
 mail = Mail(app)
-
-
-
 
 #unidades dos dados
 dadosUnidades = {
@@ -72,15 +69,16 @@ def async_slow_function(funct ,some_object):
 
 #Funções para distribuir os Leads tanto para gmail quanto google Sheets
 def sendGmail(lista_dados):
+    
     lista_contato =lista_dados[0]
     dados = lista_dados[1]
     lista_atual = lista_dados[2]
     lista_zimprova =lista_dados[3]
     
-   
     name="Elanco - Calculadora Zimprova"
     Subject = "Lead-Zimprova"
-   
+     
+    
     #Construção do corpo de email 
     itens=""
     for x in lista_contato:
@@ -107,20 +105,18 @@ def sendGmail(lista_dados):
     
     '''
     
-    
     with app.app_context():
-       msg = Message(Subject, sender=( name, 'andre@marketinglabs.com.br'), recipients =['andre@marketinglabs.com.br'] )
-       
+       msg = Message(Subject, sender=( name, 'sender@marketinglabs.com.br'), recipients =['sender@marketinglabs.com.br'] )
        msg.html = content
        mail.send(msg)
     
-   
+
 
 
 
 
 #Função para enviar o lead ao google sheet. obs: não mudar o nome da planilha. Se o fizer, mudar aqui também. 
-gc =  gp.service_account('/etc/secrets/secrets.json')
+gc =  gp.service_account('secrets.json')
 spreadsheet = gc.open("Leads Zimprova")
 
 def RegistraGoogleSheets( lista_dados):
@@ -165,10 +161,12 @@ def home_calc():
         #Informações de contato
         nome = request.form['nome']
         sobrenome = request.form['sobrenome']
-        local = request.form['local']
+        cidade = request.form['cidade']
+        estado = request.form['estado']
         melhorEmail = request.form['melhor-email']
         tel = request.form['telefone']
-        
+        autorizacao = request.form['autorizacao']
+         
         #Informações do cálculo 
         quantidade_animais = request.form['quantidade_animais']
         peso_medio = request.form['peso_medio']
@@ -267,9 +265,11 @@ def home_calc():
         lista_contato ={
             'Nome': nome,
             'Sobrenome': sobrenome,
-            'Local': local,
+            'Cidade': cidade,
+            'Estado':estado,
             'Melhor email': melhorEmail,
-            'Telefone':tel
+            'Telefone':tel,
+            'Autorizacao':autorizacao
         }
         
         lista_atual = {
@@ -288,7 +288,6 @@ def home_calc():
             'ROI':'-',
             'ganhoPeso%':'-',
             'ganhoArroba%': '-'
-            
          }
         
         lista_zimprova = {
@@ -307,8 +306,7 @@ def home_calc():
             'ROI': ("{:,.2f}".format(round(roi,2))).replace(",","_").replace(".",",").replace("_","."),
             'ganhoPeso%': ("{:,}".format(round(100*ganho_peso_zim/Peso_inicial,1))).replace(",","_").replace(".",",").replace("_","."),
             'ganhoArroba%': ("{:,}".format(round((100* (producao_arroba_total_zim-producao_arroba_total_atual)/producao_arroba_total_atual),1))).replace(",","_").replace(".",",").replace("_",".")
-            
-        }
+             }
         
         
         lista_atual_filtered={
@@ -324,7 +322,7 @@ def home_calc():
         async_slow_function(sendGmail,[lista_contato,dados, lista_atual,lista_zimprova])
        
        
-        return render_template('resultado.html', lista_atual_res = lista_atual, lista_zimprova_res =lista_zimprova, lista_contato_res = lista_contato)   # return render_template('obrigado.html', quantidade_animais_answer = quantidade_animais, peso_medio_answer =peso_medio, duracao_periodo_answer=duracao_periodo,aditivo_utilizado_answer=aditivo_utilizado, gmd_answer=gmd, preco_arroba_answer= preco_arroba, preco_suplemento_answer =preco_suplemento, suplemento_atual_answer=suplemento_atual)
+        return render_template('resultado.html', lista_atual_res = lista_atual, lista_zimprova_res =lista_zimprova, lista_contato_res = lista_contato, dados= dados )   # return render_template('obrigado.html', quantidade_animais_answer = quantidade_animais, peso_medio_answer =peso_medio, duracao_periodo_answer=duracao_periodo,aditivo_utilizado_answer=aditivo_utilizado, gmd_answer=gmd, preco_arroba_answer= preco_arroba, preco_suplemento_answer =preco_suplemento, suplemento_atual_answer=suplemento_atual)
   
 
 
@@ -336,5 +334,4 @@ def home_calc():
 
 if __name__ == '__main__':
     app.run()
-#debug=True, port=os.getenv("PORT", default=5000)
      
