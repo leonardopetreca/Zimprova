@@ -14,7 +14,7 @@ from flask_mail import Mail, Message
 app =Flask(__name__)
 
 
-load_dotenv()
+
 PASSWORD = os.getenv("PASSWORD")
 
 # configuração do email
