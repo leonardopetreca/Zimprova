@@ -31,9 +31,17 @@
       <section class="section home">
         <div class="home__container container grid">
           <div>
-            <h1 class="home__title">Testes Zimprova™ concluído!</h1>
+            <h1 class="home__title" style="color: #791600">
+              Teste Zimprova<span style="font-size: 17px; vertical-align: top"
+                >™
+              </span>
+              concluído!
+            </h1>
             <h2 class="home__subtitle">
-              Você pode faturar mais com o Zimrova™!
+              Você pode faturar mais com o Zimprova<span
+                style="font-size: 17px; vertical-align: top"
+                >™</span
+              >!
             </h2>
 
             <div class="home__content">
@@ -43,8 +51,12 @@
               />
 
               <div>
-                <h2 class="home__zimprova">ZIMPROVA™</h2>
-
+                <!--<h2 class="home__zimprova">ZIMPROVA™</h2>-->
+                <h2 style="color: #791600; font-size: 2.5rem">
+                  Zimprova<span style="font-size: 17px; vertical-align: top"
+                    >™</span
+                  >
+                </h2>
                 <p class="home__description">
                   Prova que produzir<br />
                   mais também é<br />
@@ -54,43 +66,40 @@
             </div>
           </div>
 
-          <div>
+          <div id="bk">
+            <div class="inner"></div>
             <div class="box__header">
-              <h3>
+              <h3 style="color: #0075bc">
                 Olá, {{lista_contato_res ['Nome']}}!<br />Esse é o resultado do
                 seu teste.
               </h3>
-
-              <p>
-                Os cálculos foram desenvolvidos por nossos especialistas. O
-                Zimprov™ a possui mais de 18 estudos publicados que comprovam
-                sua eficácia. Pode confiar!
-              </p>
             </div>
 
             <div class="box__content grid">
               <div>
-                <h4>
-                  <span class="font__medium">Peso Inicial Informado:</span>
-                  {{lista_atual_res['pesoInicial']}}kg;
+                <h4 style="color: #0075bc">
+                  Peso Inicial Informado: {{lista_atual_res['pesoInicial']}} kg;
                 </h4>
                 <p>
                   Atualmente, seu
                   <span class="font__medium">ganho médio diário</span> é de
-                  <span class="font__medium">{{lista_atual_res['gmd']}}g</span>,
-                  com o Zimprova™,
+                  <span class="font__medium">{{lista_atual_res['gmd']}} g</span
+                  >, com o Zimprova<span
+                    style="font-size: 10px; vertical-align: top"
+                    >™</span
+                  >,
                   <span class="font__medium"
-                    >seria de {{lista_zimprova_res['gmd']}}g</span
+                    >seria de {{lista_zimprova_res['gmd']}} g</span
                   >, gerando até
                   <span class="font__medium"
-                    >{{lista_zimprova_res['ganhoPeso']}}kg</span
+                    >{{lista_zimprova_res['ganhoPeso']}} kg</span
                   >
                   a mais no período, com peso
                   <span class="font__medium"
-                    >final por cabeça de
-                    {{lista_zimprova_res['pesoFinal']}}kg</span
-                  >, {{lista_zimprova_res['ganhoPeso%']}}% a mais do que sem o
-                  Zimprova.
+                    >final por cabeça de {{lista_zimprova_res['pesoFinal']}}
+                    kg</span
+                  >, {{lista_zimprova_res['ganhoPeso%']}} % a mais do que com o
+                  aditivo {{dados['Aditivo utilizado']}}.
                 </p>
               </div>
               <p>
@@ -100,7 +109,10 @@
                 >, totalizando
                 <span class="font__medium"
                   >{{lista_atual_res['producaoTotalArroba']}} arrobas</span
-                >. Mas com o Zimprova™, seu potencial é de
+                >. Mas com o Zimprova<span
+                  style="font-size: 10px; vertical-align: top"
+                  >™</span
+                >, seu potencial é de
                 <span class="font__medium">
                   {{lista_zimprova_res['producaoArroba']}} arrobas por
                   cabeça</span
@@ -111,50 +123,94 @@
                 >.
               </p>
               <div>
-                <h4>Vamos falar de lucro?</h4>
+                <h4 style="color: #0075bc">Vamos falar de lucro?</h4>
                 <p>
                   A receita produzida com base nas suas informações é de
                   <span class="font__medium"
-                    >R${{lista_atual_res['receitaProduzida']}}</span
+                    >R$ {{lista_atual_res['receitaProduzida']}}</span
                   >, mas
                   <span class="font__medium"
-                    >com Zimprova™, seria de
-                    R${{lista_zimprova_res['receitaProduzida']}}, que é
-                    {{lista_zimprova_res['aumentoReceita']}}% maior</span
+                    >com Zimprova<span
+                      style="font-size: 10px; vertical-align: top"
+                      >™</span
+                    >, seria de R$ {{lista_zimprova_res['receitaProduzida']}},
+                    que é {{lista_zimprova_res['aumentoReceita']}} % maior</span
                   >.
                 </p>
               </div>
               <p>
-                Para gerar tudo isso, o Zimprova™ te custaria
+                Para gerar tudo isso, o Zimprova<span
+                  style="font-size: 10px; vertical-align: top"
+                  >™</span
+                >
+                te custaria em torno de
                 <span class="font__medium"
-                  >R${{lista_zimprova_res[ 'desembolsoAdicional']}}</span
+                  >R$ {{lista_zimprova_res[ 'desembolsoAdicional']}}</span
                 >, ou seja, seu
                 <span class="font__medium"
-                  >Lucro Líquido seria de
-                  R${{lista_zimprova_res['lucroLiquido']}}</span
+                  >Lucro Líquido seria de R$
+                  {{lista_zimprova_res['lucroLiquido']}}</span
                 >.
               </p>
               <p>
                 <span class="font__medium"
-                  >O investimento em Zimprova™ te retornará
-                  R${{lista_zimprova_res['ROI']}} a cada R$1,00 investido</span
+                  >O investimento em Zimprova<span
+                    style="font-size: 10px; vertical-align: top"
+                    >™</span
+                  >
+                  te retornará em média R$ {{lista_zimprova_res['ROI']}} a cada
+                  R$ 1,00 investido</span
                 >.
               </p>
             </div>
+            <br />
+
+            <!--   <div class="box__content">
+              <i
+                ><p style="font-size: 13px">
+                  Os cálculos foram desenvolvidos por nossos especialistas
+                  baseados no período das águas comparando os aditivos
+                  mencionados. O Zimprova<span
+                    style="font-size: 10px; vertical-align: top"
+                    >™</span
+                  >
+                  possui mais de 18 estudos publicados que comprovam sua
+                  eficácia. Pode confiar!
+                </p></i
+              ><br />
+              <i
+                ><p style="font-size: 13px">
+                  Obs: a Elanco se isenta de qualquer responsabilidade de
+                  investimentos com base nessas informações.
+                </p></i
+              >
+            </div>-->
           </div>
         </div>
 
         <div class="home__action container grid">
-          <h2 class="home__title">
-            Ficou interessado? <br />Encontre parceiros Elanco que contam com
-            Zimprova™
+          <!-- <h2 class="home__title" style="margin: 40px 0px 0px 0px">
+            PROCURE POR PRODUTOS ADITIVADOS COM TECNOLOGIA ELANCO
+            <br /><br />Zimprova<span
+              style="font-size: 17px; vertical-align: top"
+              >™</span
+            >
+            Está presente em todo o Brasil. <br /><span style="font-size: 20px"
+              >Peça para o seu fornecedor de suplementos.</span
+            >
+          </h2>-->
+          <h2 class="home__title" style="margin: 40px 0px 0px 0px">
+            QUER CONHECER MAIS SOBRE O Zimprova<span
+              style="font-size: 17px; vertical-align: top"
+              >™</span
+            >?
           </h2>
 
           <a
             class="button"
             href="https://agropecuaria.elanco.com/br/produtos/corte/zimprova"
             target="_blank"
-            >Encontrar zimprova™</a
+            >Visite o site</a
           >
         </div>
       </section>
@@ -165,7 +221,22 @@
       <div class="footer__container container grid">
         <img src="{{url_for('static', filename='logo-footer.png')}}" alt="" />
 
-        <p class="footer__copyright">Copyright 2023 - Elanco Saúde Animal</p>
+        <p style="font-size: 14px; color: white">
+          Essa calculadora é um simulador baseado em cálculos desenvolvidos pelo
+          compilado de estudos publicados na biografia referenciada. Importante
+          ressaltar que os cálculos são baseados em estudos desenvolvidos no
+          período das águas. Os resultados do simulador são meramente
+          informativos e a Elanco se isenta de qualquer responsabilidade de
+          investimento baseado nessas informações. É essencial que se faça uma
+          análise mais abrangente antes de tomar qualquer decisão de
+          investimento.
+        </p>
+
+        <p class="footer__copyright" style="text-align: center">
+          Zimprova™, Elanco e o logotipo da barra diagonal são marcas
+          registradas da Elanco ou de suas filiais © 05/2023.<br />
+          Todos os direitos reservados. PM-BR-23-0152
+        </p>
       </div>
     </footer>
   </body>

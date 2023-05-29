@@ -43,8 +43,8 @@
         />
         <h3>Descubra o quanto você pode faturar a mais com o Zimprova™!</h3>
         <p class="home__description">
-          Com menos de 1 minuto você poderá verificar se o Zimprova™ funciona
-          para você e quanto você pode faturar a mais em 2023.
+          Com menos de 2 minutos você poderá verificar se a suplementação com
+          narasina funciona para você e quanto você pode faturar a mais em 2023.
         </p>
 
         <p class="home__description" style="color: #791600; font-weight: 700">
@@ -102,6 +102,43 @@
               <input type="tel" id="telefone" name="telefone" required />
             </div>
           </div>
+
+          <div
+            class=""
+            style="text-align: left; display: flex; flex-direction: row"
+          >
+            <input
+              type="checkbox"
+              id="autorizacao"
+              name="autorizacao"
+              value="Autorizo"
+              style="align-self: flex-start; margin-top: 3px; margin-right: 3px"
+            />
+            <input
+              type="checkbox"
+              style="display: none"
+              name="autorizacao"
+              value="Não"
+              checked
+            />
+
+            <label for="autorizacao">
+              Ao preencher meus dados, autorizo a Elanco a me enviar e-mails com
+              conteúdos educacionais e promocionais.</label
+            >
+          </div>
+          <p style="font-weight: 300; font-size: 12px; text-align: left">
+            No âmbito da nossa relação, e de acordo com a LGPD, poderemos
+            recolher e processar seus dados pessoais, tais como nome, e-mail e
+            telefone. Para obter mais informações sobre nossas práticas de
+            privacidade de dados, consulte:
+            <a
+              href="https://privacy.elanco.com/pt-br"
+              target="_blank"
+              style="color: #791600"
+              >https://privacy.elanco.com/pt-br</a
+            >
+          </p>
         </div>
 
         <div class="buttons-field">
@@ -122,14 +159,14 @@
         />
         <h3>
           Agora, precisamos saber um pouquinho sobre a sua fazenda para informar
-          quanto você pode lucrar a mais em 2023.
+          quanto você pode lucrar a mais na recria em 2023.
         </h3>
 
         <div class="form-fields">
           <div class="form-group">
             <div class="fieldForm">
               <label for="quantidade_animais">
-                Há quantos animais na propriedade?</label
+                Há quantos animais no lote?</label
               >
               <input
                 type="number"
@@ -159,7 +196,8 @@
           <div class="form-group">
             <div class="fieldForm">
               <label for="aditivo_utilizado"
-                >Qual aditivo você utiliza no pasto?</label
+                >Qual o aditivo utilizado no suplemento dos animais a
+                pasto?</label
               >
               <select id="aditivo_utilizado" name="aditivo_utilizado" required>
                 <option value="96" select>Sem aditivo</option>
@@ -206,19 +244,38 @@
         />
         <h3>
           95% pronto! Últimas informações e você vai descobrir o quanto pode
-          faturar a mais em 2023 no seu pasto.
+          faturar a mais em 2023 em sua fazenda.
         </h3>
 
         <div class="form-fields alone">
-          <div class="fieldForm">
-            <label for="local">Em qual cidade fica sua propriedade? </label>
-            <input type="text" id="local" name="local" required />
+          <label style="margin-bottom: 0px" for="cidade"
+            >Em qual cidade e estado fica sua propriedade?
+          </label>
+          <div class="form-group">
+            <div class="fieldForm">
+              <input
+                type="text"
+                id="cidade"
+                name="cidade"
+                placeholder="Cidade"
+                required
+              />
+            </div>
+            <div class="fieldForm">
+              <input
+                type="text"
+                id="estado"
+                name="estado"
+                placeholder="Estado"
+                required
+              />
+            </div>
           </div>
 
           <div class="fieldForm">
             <label for="preco_arroba"
-              >Qual é o preço do arroba do boi magro por aí?
-              &#40;R$/arroba&#41;</label
+              >Qual é o preço da arroba do boi magro por aí?
+              &#40;R$/@&#41;</label
             >
             <input
               type="number"
@@ -250,7 +307,8 @@
           width="150px"
         />
         <h3>
-          Legal! Agora, só temos algumas dúvidas sobre a nutrição do pasto.
+          Legal! Agora, só temos algumas dúvidas sobre a nutrição do seu
+          rebanho.
         </h3>
 
         <div class="form-fields alone">
