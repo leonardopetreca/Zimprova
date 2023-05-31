@@ -374,5 +374,15 @@
         steps[atual].style.display = "block";
       }
     </script>
+     <script>
+      buttons = document.querySelectorAll('button[type="button"]');
+      for (let bt of buttons) {
+        bt.addEventListener("click", function (event) {
+          event.preventDefault();
+        });
+      }
+
+      //console.log(buttons);
+    </script>
   </body>
 </html>
