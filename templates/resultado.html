@@ -98,8 +98,10 @@
                   <span class="font__medium"
                     >final por cabeça de {{lista_zimprova_res['pesoFinal']}}
                     kg</span
-                  >, {{lista_zimprova_res['ganhoPeso%']}} % a mais do que com o
-                  aditivo {{dados['Aditivo utilizado']}}.
+                  >, {{lista_zimprova_res['ganhoPeso%']}} % a mais do que {% if
+                  dados['Aditivo utilizado'] == "Sem Aditivo" %} sem aditivo. {%
+                  else %} com o aditivo {{dados['Aditivo utilizado']}}. {%endif
+                  %}
                 </p>
               </div>
               <p>
@@ -169,7 +171,9 @@
               <i
                 ><p style="font-size: 13px">
                   Os cálculos foram desenvolvidos por nossos especialistas
-                  baseados no período das águas comparando os aditivos
+                  baseados no período das águas comparando os 
+
+s
                   mencionados. O Zimprova<span
                     style="font-size: 10px; vertical-align: top"
                     >™</span
