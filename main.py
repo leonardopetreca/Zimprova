@@ -178,7 +178,7 @@ def home_calc():
         estado = request.form['estado']
         melhorEmail = request.form['melhor-email']
         tel = request.form['telefone']
-        autorizacao = request.form['autorizacao']
+        #autorizacao = request.form['autorizacao']
 
         # Informações do cálculo
         quantidade_animais = request.form['quantidade_animais']
@@ -268,8 +268,7 @@ def home_calc():
             'Cidade': cidade,
             'Estado': estado,
             'Melhor email': melhorEmail,
-            'Telefone': tel,
-            'Autorizacao': autorizacao
+            'Telefone': tel
         }
 
         lista_atual = {
