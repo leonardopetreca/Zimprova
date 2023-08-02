@@ -184,7 +184,7 @@ def home_calc():
         quantidade_animais = request.form['quantidade_animais']
         peso_medio = request.form['peso_medio']
         # duracao_periodo = request.form['duracao_periodo']
-        duracao_periodo = 190
+        duracao_periodo = 180
         aditivo_utilizado = request.form['aditivo_utilizado']
         gmd = request.form['gmd']
         preco_arroba = request.form['preco_arroba']
@@ -302,10 +302,10 @@ def home_calc():
 
         lista_zimprova = {
             'pesoInicial': ("{:,}".format(int(Peso_inicial))).replace(",", "_").replace(".", ",").replace("_", "."),
-            'pesoFinal': ("{:,}".format(int(round(Peso_final_zim, 0)))).replace(",", "_").replace(".", ",").replace("_",
+            'pesoFinal': ("{:,}".format(float(round(Peso_final_zim, 1)))).replace(",", "_").replace(".", ",").replace("_",
                                                                                                                     "."),
             'gmd': ("{:,}".format(gmd_zim)).replace(",", "_").replace(".", ",").replace("_", "."),
-            'ganhoPeso': ("{:,}".format(int(ganho_peso_zim))).replace(",", "_").replace(".", ",").replace("_", "."),
+            'ganhoPeso': ("{:,}".format(float(round(ganho_peso_zim,1)))).replace(",", "_").replace(".", ",").replace("_", "."),
             'producaoArroba': ("{:,}".format(round(producao_arroba_animal_zim, 1))).replace(",", "_").replace(".",
                                                                                                               ",").replace(
                 "_", "."),
