@@ -87,15 +87,17 @@
               />
             </div>
           </div>
-          <div class="form-group">
+          <div class="form-group" style="position: relative">
             <div class="fieldForm">
               <label for="melhor-email">Qual o seu melhor email? </label>
               <input
                 type="email"
                 id="melhor-email"
                 name="melhor-email"
+                onkeyup="verificaEmail()"
                 required
               />
+              <span style="font-weight: 300" id="email-erro"> </span>
             </div>
             <div class="fieldForm">
               <label for="telefone">Qual é o seu telefone/WhatsApp? </label>
@@ -127,6 +129,33 @@
           </button>
         </div>
       </div>
+
+      <style>
+        #email-erro {
+          position: absolute;
+          bottom: -12px;
+          left: 5px;
+          font-size: 12px;
+        }
+      </style>
+      <script>
+        let email = document.getElementById("melhor-email");
+        let erro = document.getElementById("email-erro");
+
+        function verificaEmail() {
+          email.parentNode.parentNode.style.marginBottom = "40px";
+          let endereco = email.value;
+
+          //console.log(endereco);
+          if (!endereco.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z\.]*$/)) {
+            erro.innerHTML = "Insira um email válido";
+            erro.style.color = "red";
+          } else {
+            erro.innerHTML = "Email válido!";
+            erro.style.color = "#28b028";
+          }
+        }
+      </script>
 
       <!-- step 3-->
       <div id="step3" class="stepForm">
