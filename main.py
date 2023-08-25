@@ -309,8 +309,7 @@ def home_calc():
             'producaoArroba': ("{:,}".format(round(producao_arroba_animal_zim, 1))).replace(",", "_").replace(".",
                                                                                                               ",").replace(
                 "_", "."),
-            'producaoTotalArroba': ("{:,}".format(int(round(producao_arroba_total_zim, 0)))).replace(",", "_").replace(
-                ".", ",").replace("_", "."),
+            'producaoTotalArroba': ("{:,}".format(float(round(producao_arroba_total_zim,1)))).replace(",","_").replace(".",",").replace("_","."),
             'receitaProduzida': ("{:,.2f}".format(round(receita_zim, 2))).replace(",", "_").replace(".", ",").replace(
                 "_", "."),
             'aumentoReceita': ("{:,.1f}".format(round(aumento_receita, 1))).replace(",", "_").replace(".", ",").replace(
@@ -325,9 +324,7 @@ def home_calc():
             'lucroLiquido': ("{:,.2f}".format(round(lucroLiquido, 2))).replace(",", "_").replace(".", ",").replace("_",
                                                                                                                    "."),
             'ROI': ("{:,.2f}".format(round(roi, 2))).replace(",", "_").replace(".", ",").replace("_", "."),
-            'ganhoPeso%': ("{:,}".format(round(100 * ganho_peso_zim / Peso_inicial, 1))).replace(",", "_").replace(".",
-                                                                                                                   ",").replace(
-                "_", "."),
+            'ganhoPeso%': ("{:,}".format(round(100*ganho_peso_zim/( Peso_final_atual),1))).replace(",","_").replace(".",",").replace("_","."),
             'ganhoArroba%': ("{:,}".format(
                 round((100 * (producao_arroba_total_zim - producao_arroba_total_atual) / producao_arroba_total_atual),
                       1))).replace(",", "_").replace(".", ",").replace("_", ".")
