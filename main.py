@@ -306,7 +306,7 @@ def home_calc():
                                                                                                                     "."),
             'gmd': ("{:,}".format(gmd_zim)).replace(",", "_").replace(".", ",").replace("_", "."),
             'ganhoPeso': ("{:,}".format(float(round(ganho_peso_zim,1)))).replace(",", "_").replace(".", ",").replace("_", "."),
-            'producaoArroba': ("{:,}".format(round(producao_arroba_animal_zim, 1))).replace(",", "_").replace(".",
+            'producaoArroba': ("{:,}".format(round(producao_arroba_animal_zim, 2))).replace(",", "_").replace(".",
                                                                                                               ",").replace(
                 "_", "."),
             'producaoTotalArroba': ("{:,}".format(float(round(producao_arroba_total_zim,1)))).replace(",","_").replace(".",",").replace("_","."),
